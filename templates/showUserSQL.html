@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="//www.w3cschool.cn/statics/plugins/bootstrapold/css/bootstrap.min.css" rel="stylesheet">
+<!--    <script src="../static/showUserSQL.js" type="text/javascript"></script>-->
+</head>
+<body>
+<!-- Jinja模板语法 -->
+<table style="width:240px" class="table table-striped" >
+    <thead>
+        <tr >
+<!--            <th>id</th>-->
+<!--            <th style="width:60px">username</th>-->
+<!--            <th style="width:60px">email</th>-->
+<!--            <th style="width:60px">password</th>-->
+<!--            <th>role</th>-->
+            <th>id</th>
+            <th style="width:60px">status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if article %}
+            {% for article in article%}
+            <tr>
+<!--                <td>{{article.id}}</td>-->
+<!--                <td>{{article.username}}</td>-->
+<!--                <td>{{article.email}}</td>-->
+<!--                <td>{{article.password}}</td>-->
+<!--                <td>{{article.role}}</td>-->
+                <td>{{article.S_Id}}</td>
+                <td>{{article.S_Status}}</td>
+
+
+
+<!--                <td>-->
+<!--                <form method="POST" action="/delete?id={{article.id}}">-->
+<!--                    <button type="submit">delete</button>-->
+<!--                </form>-->
+<!--                </td>-->
+
+            </tr>
+            {% endfor %}
+    </tbody>
+        {% else %}
+            <p>No content was found!</p>
+        {% endif %}
+</table>
+<a href="/adminAdd">adminAdd</a>
+</body>
+</html>
+

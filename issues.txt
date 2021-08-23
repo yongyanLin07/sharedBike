@@ -1,0 +1,12 @@
+BUGS you give me are all fixed.
+1. can not see words in start trip
+2. footer is blank
+3. view report can not see word
+4. track all paged can not be shown correctly
+5. operator home can not linked
+
+I have checked and modify all page redirect after a function is finished
+
+
+issues remain
+1. since I can not close the bike I can not do UI for pages after close bike.

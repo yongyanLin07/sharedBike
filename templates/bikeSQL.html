@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="//www.w3cschool.cn/statics/plugins/bootstrapold/css/bootstrap.min.css" rel="stylesheet">
+<!--    <script src="../static/showUserSQL.js" type="text/javascript"></script>-->
+</head>
+<body>
+<!-- Jinja模板语法 -->
+<table style="width:240px" class="table table-striped" >
+    <thead>
+        <tr >
+            <th>id</th>
+            <th style="width:60px">status</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% if article %}
+            {% for article in article%}
+            <tr>
+                <td>{{article.B_Id}}</td>
+                <td>{{article.B_Status}}</td>
+            </tr>
+            {% endfor %}
+    </tbody>
+        {% else %}
+            <p>No content was found!</p>
+        {% endif %}
+</table>
+</body>
+</html>
+

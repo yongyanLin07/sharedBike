@@ -1,0 +1,368 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Dosis', sans-serif;
+}
+
+.header a{
+    text-decoration: none;
+    color: dimgray;
+}
+
+p{
+    color: dimgray;
+}
+
+/*----HeaderSection----*/
+.header_section{
+    background: radial-gradient(#fff, #f2ad6c);
+}
+
+.h_container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.navigation_bar{
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    padding-top: 40px;
+}
+
+.app_title{
+    text-align: center;
+    text-shadow: 5px 5px 5px #403535;
+    font-size: 40px;
+    color: firebrick;
+}
+
+nav{
+    text-align: right;
+    flex: 1;
+}
+
+nav ul{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav .menu_options{
+    margin-left: 20px;
+    text-decoration: underline;
+    display: none;
+    width: 28px;
+}
+
+nav .menu_options li{
+    text-decoration: underline;
+    size: 50px;
+}
+
+.h_row1{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 70px;
+    margin-left: -70px;
+    margin-right: -100px;
+}
+
+.h_row1 a{
+    color: white;
+}
+
+.h_coloumn1{
+    margin-left: -0px;
+}
+
+.h_coloumn1 h1{
+    font-size: 50px;
+}
+
+.h_coloumn1 p{
+    margin-left: -0px;
+    font-size: 20px;
+    color: firebrick;
+}
+
+.h_coloumn2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.h_coloumn2 img{
+    padding: 100px 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    max-width: 100%;
+}
+
+.booknow_btn{
+    display: inline-block;
+    background: green;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+
+.booknow_btn:hover{
+    background: #563434;
+}
+
+/*---BookingSection---*/
+.bookingform_container{
+    padding: 50px 0;
+    margin-top: 70px;
+    margin-left: -70px;
+    margin-right: -100px;
+}
+
+.container .row .panel-primary{
+    border-color: firebrick;
+}
+
+.container .row .panel-primary .panel-heading{
+    background-color: darkred;
+}
+
+.container .row .panel-primary .panel-body .btn-primary{
+    color: white;
+    background-color: darkred;
+    border-color: red;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content{
+    display: grid;
+}
+
+.form-container form-group label{
+    display: block;
+    font: 1rem 'Dosis', sans-serif;
+}
+
+.form-container form-group input, label{
+    margin: .4rem 0;
+}
+
+/*---UserAccountSection---*/
+.account_module{
+    padding: 50px 0;
+    background: radial-gradient(#fff, #f2ad6c)
+}
+
+.account_module .af_coloumn1{
+    margin-left: -0px;
+}
+
+.account_module .af_coloumn2 {
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.af_panel{
+    background: white;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 0px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.af_panel_btn{
+    margin-top: 40px;
+}
+
+.af_panel span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: dimgray;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.af_panel_btn{
+    display: inline-block;
+}
+
+#indicator{
+    width: 100px;
+    border: none;
+    background: firebrick;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+.af_panel form{
+    max-width: 300px;
+    padding: 0 2px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+form input{
+    width: 100%;
+    height: 30px;
+    margin: 10px 0;
+    padding: 0 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}
+
+form input:focus{
+    outline: none;
+}
+
+form .submit_btn{
+    width: 100%;
+    height: 40px;
+    font: 20px;
+    cursor: pointer;
+    margin: 40px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+form .submit_btn:focus{
+    outline: none;
+}
+
+form a{
+    font-size: 15px;
+}
+
+#LoginForm{
+    left: -300px;
+}
+
+#SignUpForm{
+    left: 0;
+}
+
+/*----FooterSection----*/
+.footer_section{
+    background: black;
+    color: darkgray;
+    font-size: 14px;
+    padding: 60px 0 10px;
+}
+
+.f_container{
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+    max-width: 1300px;
+}
+
+.footer_section p{
+    color: darkgray;
+}
+
+.footer_section a{
+    color: darkgray;
+}
+
+.footer_section h3{
+    color: white;
+    margin-bottom: 10px;
+}
+
+.f_row1{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.f_coloumn1, .f_coloumn2, .f_coloumn3, .f_coloumn4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.f_coloumn1{
+    margin-top: 10px;
+    flex-basis: 30%;
+}
+
+f_coloumn1 h2,p{
+    margin-left: 0px;
+    font-size: 20px;
+    color: white;
+}
+
+f_coloumn1 h2{
+    font-size: 25px;
+}
+
+.f_coloumn1 .footer_icons{
+    margin-top: 20px;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.f_icons img{
+    width: 140px;
+    margin-bottom: -20px;
+}
+
+.f_coloumn2{
+    flex: 1;
+    text-align: center;
+}
+
+.f_coloumn2_h1{
+    font-size: 30px;
+    color: firebrick;
+}
+
+.f_coloumn2 p{
+    font-size: 16px;
+}
+
+.f_coloumn3, .f_coloumn4{
+    flex-basis: 12%;
+    text-align: center;
+}
+
+.footer_section li{
+    display: block;
+}

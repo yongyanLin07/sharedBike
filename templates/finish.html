@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <style>
+
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iBike</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bike share project" />
+    <link rel="stylesheet" href="../static/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/animate.css') }}">
+
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/icomoon.css') }}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.css') }}">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/superfish.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/magnific-popup.css') }}">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap-datepicker.min.css') }}">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-select.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-skin-border.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css')}}">
+
+
+    <!-- Modernizr JS -->
+    <script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="fh5co-wrapper">
+    <div id="fh5co-page">
+
+        <header id="fh5co-header-section" class="sticky-banner">
+            <div class="container">
+                <div class="nav-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                    <h1 id="fh5co-logo"><a href="#"><i class="icon-bike"></i>iBike</a></h1>
+                    <!-- START #menu-wrap -->
+                    <nav id="fh5co-menu-wrap" role="navigation">
+                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <li class="active"><a href="/home">Home</a></li>
+<!--							<li><a href="#">Rent</a></li>-->
+<!--							<li><a href="#">Repair</a></li>-->
+<!--							<li><a href="#">Move</a></li>-->
+<!--							<li><a href="#">Contact</a></li>-->
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- end:header-top -->
+        <div class="fh5co-hero">
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-cover" data-stellar-background-ratio="0.5"
+                 style="background-image: url_for('static','images/cover_bg_1.jpg');">
+                <!-- style="background-image: url(../images/cover_bg_1.jpg -->
+                <div class="desc">
+                    <div class="container">
+                        <div class="desc2 animate-box">
+                            <table style="width:50%">
+                                <thead>
+                                <tr>
+                                    <th>Bike ID</th>
+                                    <th>Errors</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% if article %}
+                                {% for article in article%}
+                                <tr>
+                                    <td>{{article.B_Id}}</td>
+                                    <td>{{article.M_Error}}</td>
+									<td>
+                                        <form method="post" action="/displayUserImage?id={{article.M_Id}}">
+                                            <button
+                                                    class="btn btn-primary btn-sm"
+                                                    type="submit">View Image
+                                            </button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="/over?id={{ article.M_Id }}">
+
+                                            <button class="btn btn-primary btn-sm" type="submit">Finish</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                                {% else %}
+                                <p>No content was found!</p>
+                                {% endif %}
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+     <footer>
+        <div class="footer_section">
+            <div class="f_container">
+                <div class="f_row1">
+                    <div class="f_coloumn1">
+                        <h2>Can't Own It? Rent It!</h2>
+                        <p>Your ultimate partner for bike rentals</p>
+<!--                        <div class="f_icons">-->
+<!--                            <img src="../static/images/img_orange_ryder_footer.png" height="5" width="5" />-->
+<!--                        </div>-->
+                    </div>
+                    <div class="f_coloumn2">
+                        <h1><center>GoRyder</center></h1>
+                        <p>Let's start our journey together!<br>With our low rates and hassle free services, you can book a bike on the go - no hindrances, no complexities...</p>
+                    </div>
+<!--                    <div class="f_coloumn3">-->
+<!--                        <h3>Quick Links</h3>-->
+<!--                        <ul>-->
+<!--                            <li><a href="about.html">About Us</a></li>-->
+<!--                            <li><a href="booking.html">Book A Trip</a></li>-->
+<!--                            <li><a href="userwallet.html">Your Wallet</a></li>-->
+<!--                            <li><a href="useraccount.html">Register/Log In</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+                    <div class="f_coloumn4">
+                        <h3>Stay Connected</h3>
+                        <ul>
+                            <li>E-mail: queries@goryder.xyz</li>
+                            <li>Phone: +00 1234567890</li>
+                            <li>WhatsApp: +00 1234567890</li>
+                            <li>Instagram: go_ryder</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+</div>
+</div>
+
+<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+<!-- jQuery Easing -->
+<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<!-- Waypoints -->
+<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+
+<!-- Stellar -->
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<!-- Superfish -->
+<script src="{{ url_for('static', filename='js/hoverIntent.js') }}"></script>
+<script src="{{ url_for('static', filename='js/superfish.js') }}"></script>
+<!-- Magnific Popup -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+<!-- Date Picker -->
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+<!-- CS Select -->
+<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
+<script src="{{ url_for('static', filename='js/selectFx.js') }}"></script>
+
+<!-- Main JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

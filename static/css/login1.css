@@ -1,0 +1,15 @@
+.box{
+    width: 250px;
+    padding:40px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    opacity: 0.9;
+}
+.box h1{
+    color:white;
+    text-transform: uppercase;
+    font-weight: 500;
+}

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <style>
+        .alert-code {
+               color: #66ff66;
+               background-color: #000000;
+               border-color: #ebccd1;}
+
+        .alert-code hr {
+                border-top-color: #000066;}
+
+        .alert-code .alert-link {
+                color: #ff9900;}
+
+    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>iBike</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Bike share project"/>
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/animate.css') }}">
+
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/icomoon.css') }}">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.css') }}">
+    <!-- Superfish -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/superfish.css') }}">
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/magnific-popup.css') }}">
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap-datepicker.min.css') }}">
+    <!-- CS Select -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-select.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-skin-border.css')}}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css')}}">
+
+
+    <!-- Modernizr JS -->
+    <script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="fh5co-wrapper">
+    <div id="fh5co-page">
+
+        <header id="fh5co-header-section" class="sticky-banner">
+            <div class="container">
+                <div class="nav-header">
+                    <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                    <h1 id="fh5co-logo"><a href="#"><i class="icon-bike"></i>iBike</a></h1>
+                    <!-- START #menu-wrap -->
+                    <nav id="fh5co-menu-wrap" role="navigation">
+                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <li class="active"><a href="/home">Home</a></li>
+                            <li><a href="/logout">Logout</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- end:header-top -->
+        <div class="fh5co-hero">
+            <div class="fh5co-overlay"></div>
+            <div class="fh5co-cover" data-stellar-background-ratio="0.5"
+                 style="background-image: url_for('static','images/cover_bg_1.jpg');">
+                <!-- style="background-image: url(../images/cover_bg_1.jpg -->
+                <div class="desc">
+                    <div class="container">
+                        <div class="desc2 animate-box">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Bike ID</th>
+                                    <th>Staff ID</th>
+                                    <th>Destination</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Order Status</th>
+                                </tr>
+                                {% for value in lists %}
+                                <tr>
+                                    <!--begin the task to use -->
+
+                                    <td> {{ value.MB_Id }}</td>
+                                    <td> {{ value.B_Id }}</td>
+                                    <td> {{ value.S_Id }}</td>
+                                    <td> {{ value.MB_Post }}</td>
+                                    <td> {{ value.MB_StartTime}}</td>
+                                    {% if value.MB_Status == 'close' %}
+                                    <td> {{ value.MB_CloseTime}}</td>
+                                    {% else %}
+                                    <td>Not finished yet</td>
+                                    {% endif %}
+                                    <td> {{ value.MB_Status}}</td>
+                                    {% if value.MB_Status == 'open' %}
+                                    <form method="post" action="/staffMovingBike">
+                                        <input type="hidden" name="order_id" value="{{value.MB_Id}}">
+                                        <td>
+                                            <button class="btn btn-primary btn-sm" type="submit">Begin Task</button>
+                                        </td>
+                                    </form>
+                                    {% elif value.MB_Status == 'running'%}
+                                    <form method="post" action="/staffFinishMoving">
+                                        <input type="hidden" name="order_id" value="{{value.MB_Id}}">
+                                        <td>
+                                            <button class="btn btn-primary btn-sm" type="submit">Finish</button>
+                                        </td>
+                                    </form>
+                                    {% else %}
+                                    <td>{{value.MB_Status}}</td>
+                                    {% endif %}
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                            {% if error %}
+                            <p><strong>Error</strong>: {{ error }}</p>
+                            {% endif %}
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
+                            {{ message }}
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="footer">
+            <div class="container">
+                <div class="row row-bottom-padded-md">
+                    <div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">
+                        <h3>GROUP:LAB_01_2K</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+</div>
+
+<!-- jQuery -->
+
+
+<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+<!-- jQuery Easing -->
+<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<!-- Waypoints -->
+<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+
+<!-- Stellar -->
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<!-- Superfish -->
+<script src="{{ url_for('static', filename='js/hoverIntent.js') }}"></script>
+<script src="{{ url_for('static', filename='js/superfish.js') }}"></script>
+<!-- Magnific Popup -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+<!-- Date Picker -->
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+<!-- CS Select -->
+<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
+<script src="{{ url_for('static', filename='js/selectFx.js') }}"></script>
+
+<!-- Main JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>carAdd</title>
+</head>
+
+<body>
+    <form method="POST" action="/carAdd">
+        <input type="text" name="id" class="form-control" placeholder="id">
+        <input type="text" name="price" class="form-control" placeholder="price">
+        <input type="text" name="status" class="form-control" placeholder="status">
+
+        <select id="B_Status" name="status" class="selectpicker form-control">
+            <option value="1">use</option>
+            <option value="2">available</option>
+            <option value="3">repair</option>
+            <option value="4">move</option>
+        </select>
+
+        <button type="submit">carAdd</button>
+    </form>
+</body>
+
+</html>
+
+
+

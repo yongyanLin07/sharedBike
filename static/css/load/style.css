@@ -1,0 +1,16 @@
+.containerload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+svg {
+  visibility: hidden;
+  width: 500px;
+  height: 500px;
+}
+.loading {
+  font-size: 24px;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,10 @@
+.idea
+modules/__pycache__
+modules/mod_finance/__pycache__
+modules/mod_movebike/__pycache__
+modules/mod_register/__pycache__
+modules/mod_renting/__pycache__
+modules/mod_repair/__pycache__
+modules/mod_repair/__pycache__
+modules/viewreport/__pycache__
+.vs

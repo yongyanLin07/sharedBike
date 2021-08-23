@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<style>
+        .alert-code {
+               color: #66ff66;
+               background-color: #000000;
+               border-color: #ebccd1;}
+
+        .alert-code hr {
+                border-top-color: #000066;}
+
+        .alert-code .alert-link {
+                color: #ff9900;}
+
+
+    .button{
+     width:150px;
+     text-align:center;
+     line-height:120%;
+     padding:0.3em;
+     font:8px Arial,sans-serif bold;
+     font-style:normal;
+     text-decoration:none;
+     margin:2px;
+     vertical-align:text-bottom;
+     zoom:1;
+     outline:none;
+     font-size-adjust:none;
+     font-stretch:normal;
+     border-radius:10px;
+     color:#fefee9;
+     border:0.2px solid #2299ff;
+     background-repeat:repeat;
+     background-size:auto;
+     background-origin:padding-box;
+     background-clip:padding-box;
+     background-color:#3399ff;
+<!--     background: linear-gradient(to bottom, #eeeff9 0%,#3399ff 100%);-->
+}
+
+
+    </style>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>During your trip</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bike share project"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/ridingBike.css">
+    <link rel="stylesheet" href="../static/css/tailwind.min.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/startTrip/reset.css" />
+	<link rel="stylesheet" type="text/css" href="../static/css/startTrip/style.css" />
+ 	<link rel="stylesheet" href="../static/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/animate.css') }}">
+
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/icomoon.css') }}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.css') }}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/superfish.css') }}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/magnific-popup.css') }}">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap-datepicker.min.css') }}">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-select.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-skin-border.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css')}}">
+
+
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="fh5co-wrapper">
+	<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="#"><i class="icon-bike"></i>iBike</a></h1>
+					<!-- START #menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="/home">Home</a></li>
+                            <li><a href="/logout">Logout</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+
+<!--		bicycle-->
+		<div style="position:absolute;left:300px;top:450px;">
+		<div class="cycle-outer" >
+			<div class="cycle-wrapper">
+				<div class="cycle-body">
+					<div class="seat">
+						<span></span>
+					</div>
+					<div class="front-wheel-frame"></div>
+					<div class="top-frame"></div>
+					<div class="front-frame">
+						<div class="bottle-holder">
+							<span></span>
+						</div>
+					</div>
+					<div class="center-frame"></div>
+					<div class="back-frame"></div>
+					<div class="bottom-frame"></div>
+					<div class="handlebar-front"></div>
+					<div class="handlebar-curve"></div>
+				</div>
+				<div class="cycle-wheel cycle-wheel-back">
+					<div class="cycle-wheel-outer">
+						<div class="cycle-wheel-inner">
+							<div class="cycle-wheel-inner-padding">
+<!--								<ul class="spoke-container">-->
+									<li class="spoke"></li>
+									<li class="spoke"></li>
+<!--								</ul>-->
+								<div class="inner-disc"></div>
+<!--								<div class="inner-disc-2"></div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cycle-wheel cycle-wheel-front">
+					<div class="cycle-wheel-outer">
+						<div class="cycle-wheel-inner">
+							<div class="cycle-wheel-inner-padding">
+<!--								<ul class="spoke-container">-->
+									<li class="spoke"></li>
+									<li class="spoke"></li>
+<!--								</ul>-->
+								<div class="inner-disc"></div>
+<!--								<div class="inner-disc-2"></div>-->
+							</div>
+						</div>
+					</div>
+				</div>
+<!--				<div class="chain-up"></div>-->
+<!--				<div class="chain-bottom"></div>-->
+				<div class="chain-rotation">
+					<div class="outer-axle"></div>
+					<div class="chain-disc-outer">
+						<div class="chain-disc-inner"></div>
+					</div>
+
+				</div>
+				<div class="chain-rods">
+					<div class="pedal-rod"></div>
+				</div>
+			</div>
+		</div></div>
+
+
+
+
+		<!-- end:header-top -->
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5"
+				 style="background-image: url_for('static','images/cover_bg_1.jpg');">
+				<!-- style="background-image: url(../images/cover_bg_1.jpg -->
+				<div class="desc">
+					<div class="container">
+						<div class="desc2 animate-box">
+
+							<div class="font-semibold" style="font-size:20px;position:absolute;left:600px;top:50px;">
+								<!--		bicycle-->
+								<p></p><style> p{ line-height:5px} </style> <p></p>
+								<div class="font-semibold" style="font-size:30px;">GoRyder checkout</div>
+
+									<article>
+									  <label>
+										<span>Your total amount to be paid is £{{ fare }}</span>
+									  </label>
+									</article>
+									<br>
+									<form action="/processPaymentByWallet" method="post">
+										<button type="submit" class="button" style=" position:absolute;left:220px;top:215px;">Pay by wallet</button>
+									</form>
+
+<!--									<br>-->
+									<form action="/processPaymentByCard" method="post">
+										<script src="https://checkout.stripe.com/checkout.js" class="stripe-button" data-key="{{ key }}" data-description="Bike Rent Payment" data-locale="auto" ></script>
+									</form>
+<!--									<br>-->
+									{% with messages = get_flashed_messages() %}
+										{% if messages %}
+
+												{% for message in messages %}
+													<p>{{ message }}</p>
+												{% endfor %}
+
+										{% endif %}
+									{% endwith %}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<footer>
+        <div class="footer_section">
+            <div class="f_container">
+                <div class="f_row1">
+                    <div class="f_coloumn1">
+                        <h2>Can't Own It? Rent It!</h2>
+                        <p>Your ultimate partner for bike rentals</p>
+                    </div>
+                    <div class="f_coloumn2">
+                        <h1><center>GoRyder</center></h1>
+                        <p>Let's start our journey together!<br>With our low rates and hassle free services, you can book a bike on the go - no hindrances, no complexities...</p>
+                    </div>
+                    <div class="f_coloumn4">
+                        <h3>Stay Connected</h3>
+                        <ul>
+                            <li>E-mail: queries@goryder.xyz</li>
+                            <li>Phone: +00 1234567890</li>
+                            <li>WhatsApp: +00 1234567890</li>
+                            <li>Instagram: go_ryder</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+</div>
+
+<!-- jQuery -->
+
+
+<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+<!-- jQuery Easing -->
+<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<!-- Waypoints -->
+<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+
+<!-- Stellar -->
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<!-- Superfish -->
+<script src="{{ url_for('static', filename='js/hoverIntent.js') }}"></script>
+<script src="{{ url_for('static', filename='js/superfish.js') }}"></script>
+<!-- Magnific Popup -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+<!-- Date Picker -->
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+<!-- CS Select -->
+<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
+<script src="{{ url_for('static', filename='js/selectFx.js') }}"></script>
+
+<!-- Main JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
+
+
+

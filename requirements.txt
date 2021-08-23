@@ -1,0 +1,8 @@
+flask
+sqlalchemy
+flask_sqlalchemy
+flask_login
+werkzeug
+pandas
+plotly
+stripe

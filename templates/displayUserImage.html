@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trip Started</title>
+</head>
+<body>
+
+	<h3>Your trip has started, Happy Riding!</h3>
+	<p> Starting location : {{ start_location }}</p>
+	
+	<br>
+	<form method="POST" action="/closeBike">
+        <button type="submit">End Trip</button>
+    </form>
+	<br>
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			
+				{% for message in messages %}
+					<p>{{ message }}</p>
+				{% endfor %}
+			
+		{% endif %}
+	{% endwith %}
+	
+</body>
+</html>

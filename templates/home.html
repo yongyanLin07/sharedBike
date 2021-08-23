@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+	<style>
+        .alert-code {
+               color: #66ff66;
+               background-color: #000000;
+               border-color: #ebccd1;}
+
+        .alert-code hr {
+                border-top-color: #000066;}
+
+        .alert-code .alert-link {
+                color: #ff9900;}
+
+    </style>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>iBike</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Bike share project"/>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../static/css/ridingBike.css">
+    <link rel="stylesheet" href="../static/css/tailwind.min.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/animate.css') }}">
+
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/icomoon.css') }}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap.css') }}">
+	<!-- Superfish -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/superfish.css') }}">
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/magnific-popup.css') }}">
+	<!-- Date Picker -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/bootstrap-datepicker.min.css') }}">
+	<!-- CS Select -->
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-select.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/cs-skin-border.css')}}">
+
+	<link rel="stylesheet" href="{{ url_for('static',filename='/css/style.css')}}">
+
+    <link rel="stylesheet" href="../static/css/app.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="{{ url_for('static', filename='js/modernizr-2.6.2.min.js') }}"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="fh5co-wrapper">
+	<div id="fh5co-page">
+
+		<header id="fh5co-header-section" class="sticky-banner">
+			<div class="container">
+				<div class="nav-header">
+					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+					<h1 id="fh5co-logo"><a href="#"><i class="icon-bike"></i>iBike</a></h1>
+					<!-- START #menu-wrap -->
+					<nav id="fh5co-menu-wrap" role="navigation">
+						<ul class="sf-menu" id="fh5co-primary-menu">
+							<li class="active"><a href="#">Home</a></li>
+<!--							<li><a href="#">Rent</a></li>-->
+<!--							<li><a href="#">Repair</a></li>-->
+<!--							<li><a href="#">Move</a></li>-->
+<!--							<li><a href="#">Contact</a></li>-->
+                            <li><a href="/logout">Logout</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<!-- end:header-top -->
+		<div class="fh5co-hero">
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5"
+				 style="background-image: url_for('static','images/cover_bg_1.jpg');">
+				<!-- style="background-image: url(../images/cover_bg_1.jpg -->
+				<div class="desc">
+					<div class="container">
+						<div class="desc2 animate-box">
+<!--                            <p><div class="font-semibold">Welcome User{{ current_user.username }}!</div></p>-->
+<!--                            p></p><style> p{ line-height:5px} </style> <p></p>-->
+                            {% if current_user.role== 1 %}
+                            <div align="center">
+                                    <p></p><style> p{ line-height:30px} </style> <p></p>
+                                    <p><div class="font-semibold" style="font-size:40px"> Welcome {{ current_user.username }}! Your balance is £{{info.C_Bal}}</div></p>
+                                </div>
+                            <div>
+                            <p><div class="font-semibold" style="font-size:15px">In this system, you can enjoy the service of renting a bike.</div></p>
+                            <p><div class="font-semibold" style="font-size:15px"> Please remember to close the lock on time, as the rental fee is calculated according to the time of unlocking.</div></p>
+                            <p><div class="font-semibold" style="font-size:15px"> In the meantime, if you find a damaged bike, please report the bike. If your report is true, you will get £0.5 in reward!</div></p>
+                            </div>
+
+                            <div align="center">
+                            <p>
+                                <img src="../static/images/img_green_ryder_footer.png" width="70" height="70" style=" position:absolute;left:300px;top:320px;">
+                                <div class="font-semibold" style="font-size:20px; position:absolute;left:400px;top:340px;"><a href="/showBikes">CLICK HERE TO RENT A BIKE</a></div>
+                            </p>
+                            </div>
+
+                            <div align="center">
+                            <p>
+                                <img src="../static/images/img_orange_ryder_footer.png" width="70" height="70" style=" position:absolute;left:300px;top:420px;">
+                                <div class="font-semibold" style="font-size:20px; position:absolute;left:400px;top:440px;"> <a href="/reporterror">CLICK HERE TO REPORT A BIKE AS DEFECTIVE</a></div>
+                            </p>
+                            </div>
+							<div align="center">
+                            <p>
+                                <img src="../static/images/wallet_image.png" width="40" height="40" style=" position:absolute;left:320px;top:520px;">
+                                <div class="font-semibold" style="font-size:20px; position:absolute;left:400px;top:530px;"> <a href="/walletInfo">VIEW YOUR WALLET</a></div>
+                            </p>
+                            </div>
+<!--                                    <p><div class="font-semibold"> Your balace is {{info.C_Bal}} </div></p>-->
+
+                            {% elif current_user.role==2 %}
+                            <div align="center">
+                                    <p></p><style> p{ line-height:10px} </style> <p></p>
+<!--                                    <p><div class="font-semibold" style="font-size:40px"> Welcome {{ current_user.username }}! </div></p>-->
+                                </div>
+                            <div>
+<!--                            <div>-->
+<!--                                <p><div class="font-semibold" style="font-size:15px">Happy to see you again! Please work Hard!</div></p>-->
+<!--                                <p><div class="font-semibold" style="font-size:15px"> Please remember to repair the broken bike as soon as you see your task.</div></p>-->
+<!--                            </div>-->
+<!--                                <p></p><style> p{ line-height:10px} </style> <p></p>-->
+                            <div align="center">
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:250px;top:100px;"> <a href="/registerForOperator">create operator</a></div>
+                                <img src="../static/images/adminIcons/Custom-Coding.png" width="50" height="50" style=" position:absolute;left:130px;top:75px;"></p>
+
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:750px;top:100px;"><a href="/viewDataReports"> View Reports </a></div>
+                                <img src="../static/images/adminIcons/Keyword Management.png" width="50" height="50" style=" position:absolute;left:650px;top:75px;"></p>
+
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:250px;top:250px;">  <a href="/addNewLocation">Add a new location</a></div>
+                                <img src="../static/images/adminIcons/Local-SEO.png" width="50" height="50" style=" position:absolute;left:130px;top:225px;"></p>
+
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:750px;top:250px;"><a href="/addNewBike"> Add a new bike </a></div></p>
+                                <img src="../static/images/adminIcons/Keyword-Research.png" width="50" height="50" style=" position:absolute;left:650px;top:225px;"></p>
+
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:250px;top:375px;"><a href="/moveAdd"> Create a Bike Transfer Request </a></div></p>
+                                <img src="../static/images/adminIcons/SEO-Content-Management.png" width="50" height="50" style=" position:absolute;left:130px;top:350px;"></p>
+
+                                <p><div class="font-semibold" style="font-size:15px;position:absolute;left:750px;top:375px;"><a href="/distribution"> Assign Defective Bike Report to Operator </a></div>
+                                <img src="../static/images/adminIcons/SEO-Maintenance.png" width="50" height="50" style=" position:absolute;left:650px;top:350px;"></p>
+                            </div>
+                            {% elif current_user.role==3 %}
+                                <div align="center">
+                                    <p></p><style> p{ line-height:30px} </style> <p></p>
+                                    <p><div class="font-semibold" style="font-size:40px"> Welcome User{{ current_user.username }}! </div></p>
+                                </div>
+                                <div>
+                                    <p><div class="font-semibold" style="font-size:15px">Happy to see you again! Please work Hard!</div></p>
+                                    <p><div class="font-semibold" style="font-size:15px"> Please remember to repair the broken bike as soon as you see your task.</div></p>
+                                    <p><div class="font-semibold" style="font-size:15px"> Don't forget to move bike.</div></p>
+                                </div>
+                                <p></p><style> p{ line-height:15px} </style> <p></p>
+                                <div align="center">
+                                <p>
+                                    <p><div class="font-semibold" style="font-size:15px"><a href="/finish">Check Maintenance</a></div>
+                                    <img src="../static/images/bikeIcon/1.png" style=" position:absolute;left:400px;top:350px;"></p>
+                                    <p><div class="font-semibold" style="font-size:15px"><a href="/staffMovingBike">Moving Bike</a></div>
+                                    <img src="../static/images/bikeIcon/2.png" style=" position:absolute;left:400px;top:400px;"></p>
+                                    <p><div class="font-semibold" style="font-size:15px"><a href="/trackAllBikes">Track All Bikes</a></div>
+                                    <img src="../static/images/bikeIcon/9.png" style=" position:absolute;left:400px;top:450px;"></p>
+                                </div>
+                                </p>
+                            {% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--	<footer>-->
+<!--		<div id="footer">-->
+<!--			<div class="container">-->
+<!--				<div class="row row-bottom-padded-md">-->
+<!--					<div class="col-md-2 col-sm-2 col-xs-12 fh5co-footer-link">-->
+<!--						<h3>GROUP:LAB_01_2K</h3>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</footer>-->
+    <footer>
+        <div class="footer_section">
+            <div class="f_container">
+                <div class="f_row1">
+                    <div class="f_coloumn1">
+                        <h2>Can't Own It? Rent It!</h2>
+                        <p>Your ultimate partner for bike rentals</p>
+<!--                        <div class="f_icons">-->
+<!--                            <img src="../static/images/img_orange_ryder_footer.png" height="5" width="5" />-->
+<!--                        </div>-->
+                    </div>
+                    <div class="f_coloumn2">
+                        <h1><center>GoRyder</center></h1>
+                        <p>Let's start our journey together!<br>With our low rates and hassle free services, you can book a bike on the go - no hindrances, no complexities...</p>
+                    </div>
+<!--                    <div class="f_coloumn3">-->
+<!--                        <h3>Quick Links</h3>-->
+<!--                        <ul>-->
+<!--                            <li><a href="about.html">About Us</a></li>-->
+<!--                            <li><a href="booking.html">Book A Trip</a></li>-->
+<!--                            <li><a href="userwallet.html">Your Wallet</a></li>-->
+<!--                            <li><a href="useraccount.html">Register/Log In</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+                    <div class="f_coloumn4">
+                        <h3>Stay Connected</h3>
+                        <ul>
+                            <li>E-mail: queries@goryder.xyz</li>
+                            <li>Phone: +00 1234567890</li>
+                            <li>WhatsApp: +00 1234567890</li>
+                            <li>Instagram: go_ryder</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</div>
+
+</div>
+
+<!-- jQuery -->
+
+
+<script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+<!-- jQuery Easing -->
+<script src="{{ url_for('static', filename='js/jquery.easing.1.3.js')}}"></script>
+<!-- Bootstrap -->
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<!-- Waypoints -->
+<script src="{{ url_for('static', filename='js/jquery.waypoints.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+
+<!-- Stellar -->
+<script src="{{ url_for('static', filename='js/jquery.stellar.min.js') }}"></script>
+<!-- Superfish -->
+<script src="{{ url_for('static', filename='js/hoverIntent.js') }}"></script>
+<script src="{{ url_for('static', filename='js/superfish.js') }}"></script>
+<!-- Magnific Popup -->
+<script src="{{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/magnific-popup-options.js') }}"></script>
+<!-- Date Picker -->
+<script src="{{ url_for('static', filename='js/bootstrap-datepicker.min.js') }}"></script>
+<!-- CS Select -->
+<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
+<script src="{{ url_for('static', filename='js/selectFx.js') }}"></script>
+
+<!-- Main JS -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>
